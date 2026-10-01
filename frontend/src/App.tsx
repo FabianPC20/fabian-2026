@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Login from './componentes/Login';
 import Registro from './componentes/Registro';
 import DashBoard from './componentes/Dashboard';
