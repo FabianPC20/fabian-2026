@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { alertWarning, alertSuccess } from '../comun/alert';
 
 type RegistroProps = {
   onRegresar: () => void;
@@ -12,62 +13,90 @@ function Registro({onRegresar} : RegistroProps) {
 
   function registrarUsuario() {
     /*Validaciones */
-    if (nombre == "") {
-        console.log('Favor de ingresar un nombre');
+    if (nombre.trim() == "") {
+        alertWarning('Favor de ingresar un nombre');
     } else if (correo == "") {
-        console.log('Favor de ingresar un correo');
+        alertWarning('Favor de ingresar un correo');
     } else if (password == "") {
-        console.log('Favor de ingresar una contraseña');
+        alertWarning('Favor de ingresar una contraseña');
     } else if (passwordC == "") {
-        console.log('Favor de volver a ingresar una contraseña');
+        alertWarning('Favor de volver a ingresar una contraseña');
     } else if (password != passwordC) {
-        console.log('Favor de validar contraseñas son diferentes');
+        alertWarning('Favor de validar contraseñas son diferentes');
     } else {
         const usuario = {
-            nombre,correo,password, saldo: 0
+          nombre,correo,password, saldo: 0
         };
-
+        alertSuccess('Registro completado correctamente');
         localStorage.setItem('usuario', JSON.stringify(usuario));
+        //localStorage.setItem('saldo', '0');
         onRegresar();  
     }
   }
 
   return (
-    <div>
-      <h1>Crear cuenta</h1>
+    <section className="vh-100" style={{ backgroundColor: '#1f2937' }}>
+      <div className="container py-5 h-100">
+        <div className="row d-flex justify-content-center align-items-center h-100">
+          <div className="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div className="card shadow-2-strong themed-card" style={{ borderRadius: '1rem' }}>
+              <div className="card-body p-5 text-center">
+                <h1>Crear cuenta</h1>
 
-      <input
-        type="text"
-        placeholder="Nombre completo"
-        value={nombre}
-        onChange={(e) => setUsuario(e.target.value.trim())}
-      />
+                <div className="form-floating mb-4">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Nombre completo"
+                    value={nombre}
+                    onChange={(e) => setUsuario(e.target.value)}
+                  />
+                  <label >Nombre completo</label>
+                </div>
 
-      <input
-        type="email"
-        placeholder="Correo electrónico"
-        value={correo}
-        onChange={(e) => setCorreo(e.target.value.trim())}
-      />
+                <div className="form-floating mb-4">
+                  <input
+                    type="email"
+                    className="form-control"
+                    placeholder="Correo electrónico"
+                    value={correo}
+                    onChange={(e) => setCorreo(e.target.value.trim())}
+                  />
+                  <label >Correo electrónico</label>
+                </div>
 
-      <input
-        type="password"
-        placeholder="Contraseña"
-        value={password}
-        onChange={(e) => setPassword(e.target.value.trim())}
-      />
+                <div className="form-floating mb-4">
+                  <input
+                    type="password"
+                    className="form-control"
+                    placeholder="Contraseña"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value.trim())}
+                  />
+                  <label >Contraseña</label>
+                </div>
 
-      <input
-        type="password"
-        placeholder="Confirmar contraseña"
-        value={passwordC}
-        onChange={(e) => setPasswordC(e.target.value.trim())}
-      />
+                <div className="form-floating mb-4">
+                  <input
+                    type="password"
+                    className="form-control"
+                    placeholder="Confirmar contraseña"
+                    value={passwordC}
+                    onChange={(e) => setPasswordC(e.target.value.trim())}
+                  />
+                   <label>Confirmar contraseña</label>
+                </div>
 
-      <button onClick={registrarUsuario}>Registrarse</button>
-      <button onClick={onRegresar}>Cancelar</button>
-    </div>
+                <button className="btn btn-primary btn-lg w-100 mb-3" onClick={registrarUsuario}>Registrarse</button>
+                <button className="btn btn-primary btn-lg w-100 mb-3" onClick={onRegresar}>Cancelar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
 export default Registro;
+

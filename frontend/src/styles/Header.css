@@ -1,0 +1,37 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 32px;
+
+    background-color: #1e293b;
+    color: #f8fafc;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.header-usuario {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-usuario button {
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #ef4444;
+    color: white;
+
+    cursor: pointer;
+}

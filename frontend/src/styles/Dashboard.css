@@ -1,0 +1,36 @@
+.dashboard {
+    min-height: 100vh;
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+.dashboard-contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
+.bienvenida {
+    margin-bottom: 30px;
+}
+
+.bienvenida h1 {
+    margin-bottom: 5px;
+}
+
+.bienvenida p {
+    color: #94a3b8;
+}
+
+.dashboard-resumen {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.tarjeta {
+    background-color: #1e293b;
+    border-radius: 12px;
+    padding: 24px;
+}
