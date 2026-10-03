@@ -1,6 +1,9 @@
+import { useState } from "react";
 import GraficaApuestas from './GraficaApuestas';
 import GraficaCarerasDia from './GraficaCarrerasDia';
 import Header from "./Header";
+import TarjetaSaldo from "./TarjetaSaldo";
+import SnailPay from './SnailPay';
 import "../styles/Dashboard.css";
 
 type DashProps = {
@@ -9,8 +12,32 @@ type DashProps = {
 
 function DashBoard({onLogout} : DashProps) {
 
-    const usuarioGuardado =  localStorage.getItem("usuario");
-    const usuario = usuarioGuardado ? JSON.parse(usuarioGuardado) : null;
+    const [mostrarSnailPay, setMostrarSnailPay] = useState(false);
+    const [usuario, setUsuario] = useState(() => {
+        const usuarioGuardado = localStorage.getItem("usuario");
+
+        return usuarioGuardado
+            ? JSON.parse(usuarioGuardado)
+            : null;
+    });
+
+    const cargarSaldo = (cantidad: number) => {
+        if (!usuario) {
+            return;
+        }
+        //Ajuste del saldo
+        const usuarioActualizado = {
+            ...usuario,
+            saldo: usuario.saldo + cantidad
+        };
+        //Actualiza el saldo visualmente
+        setUsuario(usuarioActualizado);
+        //Actualiza el item en el local storage
+        localStorage.setItem(
+            "usuario",
+            JSON.stringify(usuarioActualizado)
+        );
+    };
 
     return (
         <div className="dashboard">
@@ -25,9 +52,8 @@ function DashBoard({onLogout} : DashProps) {
 
                 <section className="dashboard-resumen">
                     <div className="tarjeta">
-                        <h2>Saldo actual</h2>
-                        <p>${usuario?.saldo ?? 0}</p>
-                        <button>Cargar saldo</button>
+                        
+                        <TarjetaSaldo saldo={usuario?.saldo ?? 0} abrirCargaSaldo={() => setMostrarSnailPay(true)}/>
                     </div>
 
                     <div className="tarjeta">
@@ -43,6 +69,11 @@ function DashBoard({onLogout} : DashProps) {
 
             </main>
 
+            {mostrarSnailPay && (
+                <SnailPay
+                    cerrar={() => setMostrarSnailPay(false)} cargarSaldo={cargarSaldo}
+                />
+            )}
             
         </div>
     );

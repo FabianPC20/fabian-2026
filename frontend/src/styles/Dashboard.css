@@ -29,8 +29,52 @@
     margin-bottom: 24px;
 }
 
+@media (max-width: 768px) {
+    .dashboard-resumen {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-contenido {
+        padding: 16px;
+    }
+}
+
 .tarjeta {
     background-color: #1e293b;
     border-radius: 12px;
     padding: 24px;
+}
+
+.tarjeta-saldo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.saldo-cantidad {
+    font-size: 36px;
+    margin-top: 10px;
+    color: #22c55e;
+}
+
+.boton-cargar {
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #3b82f6;
+    color: white;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton-cargar:hover {
+    background-color: #2563eb;
+}
+
+.swal2-container {
+    z-index: 9999 !important;
 }

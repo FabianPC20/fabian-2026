@@ -17,13 +17,17 @@ function GraficaCarrerasDia () {
 
             <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={datosCarreras} layout="vertical">
-                    <XAxis type="number" domain={[0, 6]} />
-                    <YAxis dataKey="nombre" type="category" />
-                    <Tooltip />
+                    <XAxis type="number" domain={[0, 6]} tick={{ fill: "#ffffff" }}/>
+                    <YAxis dataKey="nombre" type="category" tick={{ fill: "#ffffff" }} />
+                    <Tooltip
+                        contentStyle={{ backgroundColor: "#1e293b", borderRadius: "8px", border: "1px solid #334155" }}
+                        itemStyle={{ color: "#ffffff" }}
+                        labelStyle={{ color: "#ffffff" }}
+                    />
 
-                    <Bar
+                    <Bar 
                         dataKey="victorias"
-                        fill="#3161b9"
+                        fill="#22c55e"
                     />
                 </BarChart>
             </ResponsiveContainer>
