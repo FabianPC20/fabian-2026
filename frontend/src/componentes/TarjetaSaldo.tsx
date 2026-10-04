@@ -1,3 +1,5 @@
+import { formatearComoPesos } from '../comun/funcionesComunes';
+
 type TarjetaSaldoProps = {
     saldo: number;
     abrirCargaSaldo: () => void;
@@ -6,13 +8,13 @@ type TarjetaSaldoProps = {
 function TarjetaSaldo({ saldo, abrirCargaSaldo }: TarjetaSaldoProps) {
     return (
         
-        <div className="tarjeta tarjeta-saldo">
+        <div className="tarjeta-saldo p-1">
 
         <div>
             <h2>Saldo disponible</h2>
 
             <h2 className="saldo-cantidad">
-                ${saldo.toFixed(2)}
+                {formatearComoPesos(saldo)}
             </h2>
         </div>
 
