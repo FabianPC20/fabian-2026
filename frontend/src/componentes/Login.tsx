@@ -42,7 +42,7 @@ function Login({ onLogin,onRegistro }: LoginProps) {
             <div className="card shadow-2-strong themed-card" style={{ borderRadius: '1rem' }}>
               <div className="card-body p-5 text-center">
 
-                <h2 className="mb-3">Iniciar sesión</h2>
+                <h2 className="mb-5">Iniciar sesión</h2>
 
 
                 <div className="form-floating mb-4">

@@ -41,7 +41,7 @@ function Registro({onRegresar} : RegistroProps) {
           <div className="col-12 col-md-8 col-lg-6 col-xl-5">
             <div className="card shadow-2-strong themed-card" style={{ borderRadius: '1rem' }}>
               <div className="card-body p-5 text-center">
-                <h2 className='mb-3'>Crear cuenta </h2>
+                <h2 className='mb-5'>Crear cuenta </h2>
 
                 <div className="form-floating mb-4">
                   <input

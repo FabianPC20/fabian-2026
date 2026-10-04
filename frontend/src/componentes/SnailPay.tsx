@@ -122,7 +122,7 @@ function SnailPay({ cerrar, cargarSaldo, idUser, emailUser,saldoUser }: SnailPay
         <div className="modal-fondo">
 
             <div className="snailpay">
-                <h2 className="mb-3 text-center">Cargar saldo</h2>
+                <h2 className="mb-4 text-center">Cargar saldo</h2>
 
                 <div className="form-floating mb-4">
                     <input
@@ -138,7 +138,7 @@ function SnailPay({ cerrar, cargarSaldo, idUser, emailUser,saldoUser }: SnailPay
                 </div>
 
                 <div className="row">
-                    <div className="col-6">
+                    <div className="col-12 col-md-6">
                         <div className="form-floating mb-4">
                             <input
                                 className="form-control"
@@ -153,7 +153,7 @@ function SnailPay({ cerrar, cargarSaldo, idUser, emailUser,saldoUser }: SnailPay
                         </div>
                     </div>
 
-                    <div className="col-6">
+                    <div className="col-12 col-md-6">
                         <div className="form-floating mb-4">
                             <input
                                 className="form-control"
