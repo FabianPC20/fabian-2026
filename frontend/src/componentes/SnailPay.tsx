@@ -77,7 +77,7 @@ function SnailPay({ cerrar, cargarSaldo, idUser, emailUser,saldoUser }: SnailPay
         }, 5000);
 
         try {
-            const respuesta = await fetch("http://localhost:3000/api/snailpay", {
+            const respuesta = await fetch("https://fabian-snailpay-api.onrender.com/api/snailpay", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
