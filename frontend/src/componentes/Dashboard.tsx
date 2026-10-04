@@ -69,7 +69,7 @@ function DashBoard({onLogout} : DashProps) {
 
             </main>
 
-            {mostrarSnailPay && usuario && usuario.idUsuario && usuario.correo && usuario.saldo && (
+            {mostrarSnailPay && usuario && usuario.idUsuario && usuario.correo && (
                 <SnailPay
                     cerrar={() => setMostrarSnailPay(false)} cargarSaldo={cargarSaldo} idUser={usuario.idUsuario} emailUser={usuario.correo} saldoUser={usuario.saldo}
                 />
