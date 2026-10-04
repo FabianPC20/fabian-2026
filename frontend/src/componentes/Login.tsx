@@ -35,14 +35,15 @@ function Login({ onLogin,onRegistro }: LoginProps) {
   }
 
   return (
-    <section className="vh-100" style={{ backgroundColor: '#1f2937' }}>
+    <section className="vh-100" style={{ backgroundColor: '#0f172a' }}>
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-12 col-md-8 col-lg-6 col-xl-5">
             <div className="card shadow-2-strong themed-card" style={{ borderRadius: '1rem' }}>
               <div className="card-body p-5 text-center">
 
-                <h3 className="mb-5">Iniciar sesión</h3>
+                <h2 className="mb-3">Iniciar sesión</h2>
+
 
                 <div className="form-floating mb-4">
                   <input
@@ -71,7 +72,7 @@ function Login({ onLogin,onRegistro }: LoginProps) {
                 <hr className='my-4'></hr>
 
                 <button
-                  className="btn btn-primary btn-lg w-100 mb-3"
+                  className="btn btn-outline-secondary btn-lg w-100 mb-3"
                   type="button"
                   onClick={iniciarSesion}
                 >

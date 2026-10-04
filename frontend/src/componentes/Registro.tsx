@@ -25,7 +25,7 @@ function Registro({onRegresar} : RegistroProps) {
         alertWarning('Favor de validar contraseñas son diferentes');
     } else {
         const usuario = {
-          nombre,correo,password, saldo: 0
+          idUsuario: Date.now(),nombre,correo,password, saldo: 0
         };
         alertSuccess('Registro completado correctamente');
         localStorage.setItem('usuario', JSON.stringify(usuario));
@@ -35,13 +35,13 @@ function Registro({onRegresar} : RegistroProps) {
   }
 
   return (
-    <section className="vh-100" style={{ backgroundColor: '#1f2937' }}>
+    <section className="vh-100" style={{ backgroundColor: '#0f172a' }}>
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-12 col-md-8 col-lg-6 col-xl-5">
             <div className="card shadow-2-strong themed-card" style={{ borderRadius: '1rem' }}>
               <div className="card-body p-5 text-center">
-                <h1>Crear cuenta</h1>
+                <h2 className='mb-3'>Crear cuenta </h2>
 
                 <div className="form-floating mb-4">
                   <input
@@ -87,8 +87,10 @@ function Registro({onRegresar} : RegistroProps) {
                    <label>Confirmar contraseña</label>
                 </div>
 
-                <button className="btn btn-primary btn-lg w-100 mb-3" onClick={registrarUsuario}>Registrarse</button>
-                <button className="btn btn-primary btn-lg w-100 mb-3" onClick={onRegresar}>Cancelar</button>
+                <hr/>
+
+                <button className="btn btn-outline-secondary btn-lg w-100 mb-3" onClick={registrarUsuario}>Registrarse</button>
+                <button className="btn btn-outline-secondary btn-lg w-100 mb-3" onClick={onRegresar}>Cancelar</button>
               </div>
             </div>
           </div>

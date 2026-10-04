@@ -78,3 +78,32 @@
 .swal2-container {
     z-index: 9999 !important;
 }
+
+.saldo-detalles {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 16px;
+    margin: 20px 0;
+
+    background-color: #0f172a;
+    border-radius: 10px;
+}
+
+.saldo-tipo {
+    margin: 0;
+    font-weight: bold;
+}
+
+.saldo-tarjeta {
+    margin: 4px 0 0;
+    color: #94a3b8;
+}
+
+.saldo-estado {
+    margin-left: auto;
+    color: #22c55e;
+    font-size: 13px;
+    font-weight: bold;
+}

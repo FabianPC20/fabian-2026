@@ -4,6 +4,7 @@ import Login from './componentes/Login';
 import Registro from './componentes/Registro';
 import DashBoard from './componentes/Dashboard';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 
 function App() {
 
