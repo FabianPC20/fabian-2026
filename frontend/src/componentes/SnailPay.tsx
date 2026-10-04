@@ -207,11 +207,11 @@ function SnailPay({ cerrar, cargarSaldo, idUser, emailUser,saldoUser }: SnailPay
                 <hr/>
 
                 <div className="snailpay-botones">
-                    <button onClick={cerrar}>
+                    <button className="btn btn-outline-secondary " onClick={cerrar}>
                         Cancelar
                     </button>
 
-                    <button onClick={procesarCarga}>
+                    <button className="btn btn-outline-secondary " onClick={procesarCarga}>
                         Confirmar
                     </button>
                 </div>
